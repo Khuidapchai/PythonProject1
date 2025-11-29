@@ -182,7 +182,7 @@ def main():
                         move_from, move_to = pending_move_data
                         move = chess.Move(move_from, move_to, promotion=piece_type)
                         board.push(move)
-                        print(f"Khôi vừa đi nước: {move}")
+                        print(f"Bạn vừa đi nước: {move}")
 
                         # Tắt menu, reset trạng thái
                         promotion_pending = False
@@ -245,7 +245,7 @@ def main():
                     # NẾU KHÔNG PHẢI PHONG CẤP -> ĐI BÌNH THƯỜNG
                     if move in board.legal_moves:
                         board.push(move)
-                        print(f"Khôi vừa đi nước: {move}")
+                        print(f"Bạn vừa đi nước: {move}")
                     else:
                         pass  # Nước đi lỗi
 
