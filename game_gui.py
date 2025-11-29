@@ -162,8 +162,10 @@ def main():
 
             # Máy suy nghĩ
             # Nếu máy cầm quân Đen (player cầm Trắng) -> Máy đi Đen và ngược lại
+            print("Cá kho đang suy nghĩ nát óc...")
             result = engine.play(board, chess.engine.Limit(time=1.0))
             board.push(result.move)
+            print(f"Cá kho quyết định đi: {result.move}")
 
         # Xử lý sự kiện (người chơi)
         for event in pygame.event.get():
@@ -180,6 +182,7 @@ def main():
                         move_from, move_to = pending_move_data
                         move = chess.Move(move_from, move_to, promotion=piece_type)
                         board.push(move)
+                        print(f"Khôi vừa đi nước: {move}")
 
                         # Tắt menu, reset trạng thái
                         promotion_pending = False
@@ -242,6 +245,7 @@ def main():
                     # NẾU KHÔNG PHẢI PHONG CẤP -> ĐI BÌNH THƯỜNG
                     if move in board.legal_moves:
                         board.push(move)
+                        print(f"Khôi vừa đi nước: {move}")
                     else:
                         pass  # Nước đi lỗi
 
